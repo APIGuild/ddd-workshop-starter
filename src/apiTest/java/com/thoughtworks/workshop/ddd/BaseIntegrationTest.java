@@ -3,7 +3,6 @@ package com.thoughtworks.workshop.ddd;
 import static java.lang.ClassLoader.getSystemClassLoader;
 import static java.lang.String.format;
 import static java.nio.charset.Charset.defaultCharset;
-import static org.springframework.security.test.web.servlet.setup.SecurityMockMvcConfigurers.springSecurity;
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppContextSetup;
 
 import java.io.IOException;
@@ -11,7 +10,6 @@ import java.io.InputStream;
 
 import org.apache.commons.io.IOUtils;
 import org.junit.Before;
-import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -33,17 +31,13 @@ public abstract class BaseIntegrationTest {
 
     @Before
     public void setUp() {
-        mockMvc = webAppContextSetup(context).apply(springSecurity()).build();
+        mockMvc = webAppContextSetup(context).build();
     }
 
     protected String loadPayload(String service, String fileName) throws IOException {
         String filePath = format(PAYLOAD_RESOURCE_FORMAT, service, fileName);
         InputStream resource = getSystemClassLoader().getResourceAsStream(filePath);
         return IOUtils.toString(resource, defaultCharset());
-    }
-
-    @Test
-    public void contextLoads() {
     }
 
 }
