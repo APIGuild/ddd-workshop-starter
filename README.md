@@ -13,7 +13,7 @@ Domain Driven Design Workshop Starter
 
 ### Run application
 ```
-./gradle bootRun
+./gradlew bootRun
 ```
 
 ### Start continuous build

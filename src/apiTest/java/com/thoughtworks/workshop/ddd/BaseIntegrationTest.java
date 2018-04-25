@@ -1,5 +1,6 @@
 package com.thoughtworks.workshop.ddd;
 
+import static com.thoughtworks.workshop.ddd.utils.constant.Constants.CONTENT_TYPE;
 import static java.lang.ClassLoader.getSystemClassLoader;
 import static java.lang.String.format;
 import static java.nio.charset.Charset.defaultCharset;
@@ -16,6 +17,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.ResultActions;
+import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import org.springframework.web.context.WebApplicationContext;
 
 @RunWith(SpringRunner.class)
@@ -32,6 +35,10 @@ public abstract class BaseIntegrationTest {
     @Before
     public void setUp() {
         mockMvc = webAppContextSetup(context).build();
+    }
+
+    protected ResultActions performRequest(MockHttpServletRequestBuilder builder) throws Exception {
+        return mockMvc.perform(builder.contentType(CONTENT_TYPE));
     }
 
     protected String loadPayload(String service, String fileName) throws IOException {

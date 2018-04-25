@@ -1,4 +1,4 @@
-package com.thoughtworks.workshop.ddd.exception;
+package com.thoughtworks.workshop.ddd.exception.advice;
 
 import static com.google.common.collect.ImmutableList.of;
 import static java.lang.String.format;
@@ -14,6 +14,8 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import com.thoughtworks.workshop.ddd.exception.ApplicationErrorCodes;
+import com.thoughtworks.workshop.ddd.exception.ApplicationException;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {

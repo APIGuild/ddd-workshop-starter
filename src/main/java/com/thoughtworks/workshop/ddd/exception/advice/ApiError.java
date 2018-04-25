@@ -1,4 +1,4 @@
-package com.thoughtworks.workshop.ddd.exception;
+package com.thoughtworks.workshop.ddd.exception.advice;
 
 import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_EMPTY;
 
