@@ -14,7 +14,6 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import com.thoughtworks.workshop.ddd.exception.ApplicationErrorCodes;
 import com.thoughtworks.workshop.ddd.exception.ApplicationException;
 
 @ControllerAdvice
@@ -35,17 +34,16 @@ public class GlobalExceptionHandler {
 
     private ApiError newApiError(FieldError field) {
         String message = format("%s %s", field.getField(), field.getDefaultMessage());
-        return newApiError(BAD_REQUEST, ApplicationErrorCodes.ARGUMENT_INVALID_ERROR_CODE, BAD_REQUEST.toString(), message);
+        return newApiError(BAD_REQUEST, BAD_REQUEST.toString(), message);
     }
 
     private ApiError newApiError(ApplicationException ex) {
-        return newApiError(ex.getStatus(), ex.getCode(), ex.getStatus().toString(), ex.getMessage());
+        return newApiError(ex.getStatus(), ex.getStatus().toString(), ex.getMessage());
     }
 
-    private ApiError newApiError(HttpStatus status, String code, String title, String message) {
+    private ApiError newApiError(HttpStatus status, String title, String message) {
         return ApiError.builder()
                 .status(valueOf(status))
-                .code(code)
                 .title(title)
                 .detail(message).build();
     }
