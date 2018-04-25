@@ -9,6 +9,5 @@ import lombok.Getter;
 @AllArgsConstructor
 public abstract class ApplicationException extends RuntimeException {
     private final HttpStatus status;
-    private final String code;
     private final String message;
 }
