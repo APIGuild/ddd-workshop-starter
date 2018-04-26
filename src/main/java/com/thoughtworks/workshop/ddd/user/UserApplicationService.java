@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import com.thoughtworks.workshop.ddd.user.command.InitPasswordCommand;
 import com.thoughtworks.workshop.ddd.user.command.LoginCommand;
 import com.thoughtworks.workshop.ddd.user.command.RegisterCommand;
@@ -28,7 +29,8 @@ public class UserApplicationService {
 
     @Autowired
     private RegisterService registerService;
-    
+
+    @Transactional
     public String register(RegisterCommand command) {
         User user = registerService.createUser(command.getOwnerEmail(), command.getPolicyNumber());
         String uuid = user.getUuid();
