@@ -17,13 +17,14 @@ import com.thoughtworks.workshop.ddd.domain.user.UserApplicationService;
 import com.thoughtworks.workshop.ddd.domain.user.command.InitPasswordCommand;
 import com.thoughtworks.workshop.ddd.domain.user.command.LoginCommand;
 import com.thoughtworks.workshop.ddd.domain.user.command.RegisterCommand;
+import com.thoughtworks.workshop.ddd.utils.constant.Constants;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
 @RestController
-@RequestMapping("/user")
-@Api(value = "User REST API", description = "User related API")
+@RequestMapping(value = "/user", consumes = Constants.CONTENT_TYPE)
+@Api(tags = "User", description = "User Resource", consumes = Constants.CONTENT_TYPE)
 public class UserController {
 
     @Autowired
@@ -32,7 +33,7 @@ public class UserController {
     @CrossOrigin
     @PostMapping
     @ResponseStatus(CREATED)
-    @ApiOperation(value = "Register User", notes = "Registration")
+    @ApiOperation(value = "Register User", notes = "User Register")
     public String register(@RequestBody @Valid RegisterCommand command) {
         return userApplicationService.register(command);
     }
@@ -48,7 +49,7 @@ public class UserController {
     @CrossOrigin
     @PostMapping(value = "/login")
     @ResponseStatus(OK)
-    @ApiOperation(value = "Init Password", notes = "Login")
+    @ApiOperation(value = "Init Password", notes = "User Login")
     public void login(@RequestBody @Valid LoginCommand command) {
         userApplicationService.login(command);
     }
