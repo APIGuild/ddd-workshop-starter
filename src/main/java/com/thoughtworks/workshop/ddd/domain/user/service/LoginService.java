@@ -1,13 +1,13 @@
-package com.thoughtworks.workshop.ddd.user.domain.service;
+package com.thoughtworks.workshop.ddd.domain.user.service;
 
+import static java.util.Optional.ofNullable;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import com.thoughtworks.workshop.ddd.domain.user.model.User;
 import com.thoughtworks.workshop.ddd.exception.ResourceNotFoundException;
 import com.thoughtworks.workshop.ddd.exception.UnauthorizedException;
 import com.thoughtworks.workshop.ddd.persistence.user.UserRepositoryInMemory;
-import com.thoughtworks.workshop.ddd.user.domain.model.User;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-import static java.util.Optional.ofNullable;
 
 @Service
 public class LoginService {

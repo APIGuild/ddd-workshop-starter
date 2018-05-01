@@ -1,11 +1,11 @@
 package com.thoughtworks.workshop.ddd.persistence.user;
 
-import com.thoughtworks.workshop.ddd.user.domain.model.User;
-import com.thoughtworks.workshop.ddd.user.repository.UserRepository;
-import org.springframework.stereotype.Repository;
-
 import java.util.HashMap;
 import java.util.Map;
+
+import org.springframework.stereotype.Repository;
+import com.thoughtworks.workshop.ddd.domain.user.model.User;
+import com.thoughtworks.workshop.ddd.domain.user.repository.UserRepository;
 
 
 @Repository

@@ -1,4 +1,4 @@
-package com.thoughtworks.workshop.ddd.user.domain.service;
+package com.thoughtworks.workshop.ddd.domain.user.service;
 
 import org.springframework.stereotype.Service;
 

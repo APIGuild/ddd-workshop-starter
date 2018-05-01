@@ -1,4 +1,4 @@
-package com.thoughtworks.workshop.ddd;
+package com.thoughtworks.workshop.ddd.webapi;
 
 import static org.springframework.http.HttpStatus.OK;
 

@@ -1,4 +1,4 @@
-package com.thoughtworks.workshop.ddd.user.domain.model;
+package com.thoughtworks.workshop.ddd.domain.user.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

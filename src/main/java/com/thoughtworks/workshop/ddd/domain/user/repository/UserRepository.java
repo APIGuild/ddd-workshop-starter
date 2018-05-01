@@ -1,6 +1,6 @@
-package com.thoughtworks.workshop.ddd.user.repository;
+package com.thoughtworks.workshop.ddd.domain.user.repository;
 
-import com.thoughtworks.workshop.ddd.user.domain.model.User;
+import com.thoughtworks.workshop.ddd.domain.user.model.User;
 
 public interface UserRepository {
     void save(User user);

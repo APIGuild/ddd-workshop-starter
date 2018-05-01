@@ -1,18 +1,18 @@
-package com.thoughtworks.workshop.ddd.user;
+package com.thoughtworks.workshop.ddd.domain.user;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import com.thoughtworks.workshop.ddd.user.command.InitPasswordCommand;
-import com.thoughtworks.workshop.ddd.user.command.LoginCommand;
-import com.thoughtworks.workshop.ddd.user.command.RegisterCommand;
-import com.thoughtworks.workshop.ddd.user.domain.model.User;
-import com.thoughtworks.workshop.ddd.user.domain.service.EmailService;
-import com.thoughtworks.workshop.ddd.user.domain.service.LoginService;
-import com.thoughtworks.workshop.ddd.user.domain.service.RegisterService;
-import com.thoughtworks.workshop.ddd.user.repository.UserRepository;
+import com.thoughtworks.workshop.ddd.domain.user.command.InitPasswordCommand;
+import com.thoughtworks.workshop.ddd.domain.user.command.LoginCommand;
+import com.thoughtworks.workshop.ddd.domain.user.command.RegisterCommand;
+import com.thoughtworks.workshop.ddd.domain.user.model.User;
+import com.thoughtworks.workshop.ddd.domain.user.repository.UserRepository;
+import com.thoughtworks.workshop.ddd.domain.user.service.EmailService;
+import com.thoughtworks.workshop.ddd.domain.user.service.LoginService;
+import com.thoughtworks.workshop.ddd.domain.user.service.RegisterService;
 
 @Service
 public class UserApplicationService {

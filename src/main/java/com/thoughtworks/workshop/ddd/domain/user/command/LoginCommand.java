@@ -1,11 +1,11 @@
-package com.thoughtworks.workshop.ddd.user.command;
+package com.thoughtworks.workshop.ddd.domain.user.command;
+
+import javax.validation.constraints.NotBlank;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
-
-import javax.validation.constraints.NotBlank;
 
 @Getter
 @Setter

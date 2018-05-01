@@ -1,13 +1,13 @@
-package com.thoughtworks.workshop.ddd.user.domain.service;
+package com.thoughtworks.workshop.ddd.domain.user.service;
 
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import com.thoughtworks.workshop.ddd.domain.user.model.User;
+import com.thoughtworks.workshop.ddd.domain.user.repository.UserRepository;
 import com.thoughtworks.workshop.ddd.exception.BadRequestException;
 import com.thoughtworks.workshop.ddd.exception.ResourceConflictException;
-import com.thoughtworks.workshop.ddd.user.domain.model.User;
-import com.thoughtworks.workshop.ddd.user.repository.UserRepository;
 
 @Service
 public class RegisterService {
