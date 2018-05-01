@@ -19,8 +19,7 @@ public class RegisterService {
         if (userRepository.existByEmail(email)) throw new ResourceConflictException("Email exist");
         if (!validate(email, policyNumber)) throw new BadRequestException("PolicyNumber not correct");
         String uuid = UUID.randomUUID().toString();
-        User user = new User(uuid, null, email);
-        return user;
+        return new User(uuid, null, email);
     }
 
     private boolean validate(String email, String policyNumber) {

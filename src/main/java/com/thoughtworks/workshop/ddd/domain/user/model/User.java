@@ -1,20 +1,26 @@
 package com.thoughtworks.workshop.ddd.domain.user.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
-@Builder
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
+@Getter
+@Setter
 public class User {
     private String uuid;
-    private String passWord;
+    private String password;
     private String email;
 
+    public User(String uuid, String password, String email) {
+        this.uuid = uuid;
+        this.password = password;
+        this.email = email;
+    }
+
+    public void initPassWord(String password) {
+        this.password = password;
+    }
+
     public boolean isPassWordCorrect(String password) {
-        return this.passWord.equals(password);
+        return this.password.equals(password);
     }
 }

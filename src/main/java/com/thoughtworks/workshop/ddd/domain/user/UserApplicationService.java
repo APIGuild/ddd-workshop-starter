@@ -42,7 +42,7 @@ public class UserApplicationService {
 
     public void initPassword(InitPasswordCommand command) {
         User user = userRepository.findByUuid(command.getUuid());
-        user.setPassWord(command.getPassword());
+        user.initPassWord(command.getPassword());
         logger.info("Set password with uuid[{}]", command.getUuid());
         userRepository.save(user);
     }
