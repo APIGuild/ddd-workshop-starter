@@ -6,6 +6,7 @@ import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.when;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -34,6 +35,7 @@ public class CarPolicyQuoteServiceTest {
     }
 
     @Test
+    @Ignore // TODO(You): Workshop-2
     public void shouldCalculateQuoteGivenCarDetailsInformation() {
         GenerateCarPolicyQuoteCommand command = new GenerateCarPolicyQuoteCommand("2010-2014", "BMW", "C650", "Street", "750-1499km", null);
 
@@ -49,6 +51,7 @@ public class CarPolicyQuoteServiceTest {
     }
 
     @Test(expected = BadRequestException.class)
+    @Ignore // TODO(You): Workshop-2
     public void shouldGenerateCarPolicyQuoteThrowsExceptionGivenCarQuoteCommandDetailsAsUnknown() {
         GenerateCarPolicyQuoteCommand command = new GenerateCarPolicyQuoteCommand("2010-2014", "BMW", "C650", "UNKNOWN", "UNKNOWN", null);
 

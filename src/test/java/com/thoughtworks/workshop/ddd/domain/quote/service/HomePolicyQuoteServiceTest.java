@@ -6,6 +6,7 @@ import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.when;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -34,6 +35,7 @@ public class HomePolicyQuoteServiceTest {
     }
 
     @Test
+    @Ignore // TODO(You): Workshop-2
     public void shouldGenerateHomePolicyQuoteGivenHomePolicyCommand() {
         GenerateHomePolicyQuoteCommand command = new GenerateHomePolicyQuoteCommand("钢材", "公寓", "三室及以上", "Address");
 
@@ -48,6 +50,7 @@ public class HomePolicyQuoteServiceTest {
     }
 
     @Test(expected = BadRequestException.class)
+    @Ignore // TODO(You): Workshop-2
     public void shouldGenerateHomePolicyQuoteThrowsExceptionGivenHomeQuoteCommandDetailsAsUnknown() {
         GenerateHomePolicyQuoteCommand command = new GenerateHomePolicyQuoteCommand("UNKNOWN", "UNKNOWN", "UNKNOWN", null);
 

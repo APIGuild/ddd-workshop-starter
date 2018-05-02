@@ -5,6 +5,7 @@ import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -38,6 +39,7 @@ public class QuoteApplicationServiceTest {
     private CarPolicyQuoteRepository carPolicyQuoteRepository;
 
     @Test
+    @Ignore // TODO(You): Workshop-2
     public void shouldGenerateHomePolicyQuoteGivenHomePolicyQuoteCommand() {
         GenerateHomePolicyQuoteCommand homePolicyQuoteCommand = new GenerateHomePolicyQuoteCommand();
         HomePolicyQuote expectedHomePolicyQuote = new HomePolicyQuote();
@@ -50,6 +52,7 @@ public class QuoteApplicationServiceTest {
     }
 
     @Test
+    @Ignore // TODO(You): Workshop-2
     public void shouldGenerateCarPolicyQuoteGivenCarPolicyQuoteCommand() {
         GenerateCarPolicyQuoteCommand carPolicyQuoteCommand = new GenerateCarPolicyQuoteCommand();
         CarPolicyQuote expectedCarPolicyQuote = new CarPolicyQuote();

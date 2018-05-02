@@ -4,11 +4,13 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import com.thoughtworks.workshop.ddd.BaseIntegrationTest;
 
 public class QuoteControllerIntegrationTest extends BaseIntegrationTest {
     @Test
+    @Ignore // TODO(You): Workshop-2
     public void shouldGenerateHomePolicyQuoteSuccessfully() throws Exception {
         performRequest(post("/quote/home").content(loadPayload("quote", "home-details.json")))
                 .andExpect(status().isCreated())
@@ -17,6 +19,7 @@ public class QuoteControllerIntegrationTest extends BaseIntegrationTest {
     }
 
     @Test
+    @Ignore // TODO(You): Workshop-2
     public void shouldGenerateHomePolicyQuoteThrowBadRequestException() throws Exception {
         performRequest(post("/quote/home").content("{}"))
                 .andExpect(status().isBadRequest())
@@ -26,6 +29,7 @@ public class QuoteControllerIntegrationTest extends BaseIntegrationTest {
     }
 
     @Test
+    @Ignore // TODO(You): Workshop-2
     public void shouldGenerateCarPolicyQuoteSuccessfully() throws Exception {
         performRequest(post("/quote/car").content(loadPayload("quote", "car-details.json")))
                 .andExpect(status().isCreated())
@@ -34,6 +38,7 @@ public class QuoteControllerIntegrationTest extends BaseIntegrationTest {
     }
 
     @Test
+    @Ignore // TODO(You): Workshop-2
     public void shouldGenerateCarPolicyQuoteThrowBadRequestException() throws Exception {
         performRequest(post("/quote/car").content("{}"))
                 .andExpect(status().isBadRequest())
