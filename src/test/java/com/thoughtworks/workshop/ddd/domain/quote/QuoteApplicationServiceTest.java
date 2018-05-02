@@ -46,7 +46,7 @@ public class QuoteApplicationServiceTest {
         HomePolicyQuote homePolicyQuote = applicationService.generateQuote(homePolicyQuoteCommand);
 
         verify(homePolicyQuoteRepository).save(homePolicyQuote);
-        assertThat(expectedHomePolicyQuote, is(expectedHomePolicyQuote));
+        assertThat(homePolicyQuote, is(expectedHomePolicyQuote));
     }
 
     @Test

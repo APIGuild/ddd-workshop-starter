@@ -32,18 +32,18 @@ jacocoTestCoverageVerification {
             })
         }
         rule {
-            element "CLASS"
+            element "BUNDLE"
 
             limit {
                 counter = 'LINE'
                 value = 'COVEREDRATIO'
-                minimum = 0.0
+                minimum = 0.1
             }
 
             limit {
                 counter = 'BRANCH'
                 value = 'COVEREDRATIO'
-                minimum = 0.0
+                minimum = 0.1
             }
         }
     }

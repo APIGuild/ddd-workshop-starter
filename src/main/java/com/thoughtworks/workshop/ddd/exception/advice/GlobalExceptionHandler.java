@@ -34,11 +34,11 @@ public class GlobalExceptionHandler {
 
     private ApiError newApiError(FieldError field) {
         String message = format("%s %s", field.getField(), field.getDefaultMessage());
-        return newApiError(BAD_REQUEST, BAD_REQUEST.toString(), message);
+        return newApiError(BAD_REQUEST, BAD_REQUEST.getReasonPhrase(), message);
     }
 
     private ApiError newApiError(ApplicationException ex) {
-        return newApiError(ex.getStatus(), ex.getStatus().toString(), ex.getMessage());
+        return newApiError(ex.getStatus(), ex.getStatus().getReasonPhrase(), ex.getMessage());
     }
 
     private ApiError newApiError(HttpStatus status, String title, String message) {

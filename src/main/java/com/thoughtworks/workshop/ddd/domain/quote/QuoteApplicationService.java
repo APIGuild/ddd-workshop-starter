@@ -15,18 +15,21 @@ import com.thoughtworks.workshop.ddd.domain.quote.service.HomePolicyQuoteService
 @Service
 @Transactional
 public class QuoteApplicationService {
-
-    @Autowired
     private CarPolicyQuoteService carPolicyQuoteService;
-
-    @Autowired
     private HomePolicyQuoteService homePolicyQuoteService;
-
-    @Autowired
     private CarPolicyQuoteRepository carPolicyQuoteRepository;
+    private HomePolicyQuoteRepository homePolicyQuoteRepository;
 
     @Autowired
-    private HomePolicyQuoteRepository homePolicyQuoteRepository;
+    public QuoteApplicationService(CarPolicyQuoteService carPolicyQuoteService,
+                                   HomePolicyQuoteService homePolicyQuoteService,
+                                   CarPolicyQuoteRepository carPolicyQuoteRepository,
+                                   HomePolicyQuoteRepository homePolicyQuoteRepository) {
+        this.carPolicyQuoteService = carPolicyQuoteService;
+        this.homePolicyQuoteService = homePolicyQuoteService;
+        this.carPolicyQuoteRepository = carPolicyQuoteRepository;
+        this.homePolicyQuoteRepository = homePolicyQuoteRepository;
+    }
 
     public HomePolicyQuote generateQuote(GenerateHomePolicyQuoteCommand command) {
         HomePolicyQuote homePolicyQuote = homePolicyQuoteService.generateQuote(command);
