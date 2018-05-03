@@ -1,6 +1,7 @@
 package com.thoughtworks.workshop.ddd.domain.quote.service;
 
 import static java.lang.String.format;
+import static java.util.Optional.ofNullable;
 import static java.util.stream.Stream.of;
 
 import java.text.DecimalFormat;
@@ -20,11 +21,8 @@ public abstract class QuoteService<R, C> {
     public abstract R generateQuote(C command);
 
     protected Double retrieveQuoteRate(String category) {
-        Double rate = quoteRateRepository.getRate(category);
-        if (rate == null) {
-            throw new BadRequestException(format(INVALID_POLICY_QUOTE_CATEGORY_MESSAGE, category));
-        }
-        return rate;
+        return ofNullable(quoteRateRepository.getRate(category))
+                .orElseThrow(() -> new BadRequestException(format(INVALID_POLICY_QUOTE_CATEGORY_MESSAGE, category)));
     }
 
     protected Double multiplyBasePremiumByRates(Double... rates) {
