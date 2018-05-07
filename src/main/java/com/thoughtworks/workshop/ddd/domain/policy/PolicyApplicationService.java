@@ -1,5 +1,6 @@
 package com.thoughtworks.workshop.ddd.domain.policy;
 
+import com.thoughtworks.workshop.ddd.domain.policy.command.RenewCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -23,5 +24,9 @@ public class PolicyApplicationService {
         policyRepository.save(policy);
 
         return policy.getPolicyNumber();
+    }
+
+    public void renew(RenewCommand renewCommand) {
+
     }
 }
