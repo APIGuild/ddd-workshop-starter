@@ -22,7 +22,7 @@ public class Policy {
         setPolicyStartDate(now());
     }
 
-    public void setPolicyStartDate(LocalDate policyStartDate) {
+    private void setPolicyStartDate(LocalDate policyStartDate) {
         this.policyStartDate = policyStartDate;
         this.policyEndDate = policyStartDate.plusYears(TWO_YEARS);
     }
