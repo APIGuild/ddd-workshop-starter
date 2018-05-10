@@ -1,6 +1,6 @@
-package com.thoughtworks.workshop.ddd.domain.policy.model;
+package com.thoughtworks.workshop.ddd.domain.core.event;
 
-public class PolicyRenewedEvent {
+public class PolicyRenewedEvent implements DomainEvent {
     private final String policyNumber;
     private final String cardNumber;
     private final Double premium;
@@ -23,5 +23,14 @@ public class PolicyRenewedEvent {
 
     public Double getPremium() {
         return premium;
+    }
+
+    @Override
+    public String toString() {
+        return "PolicyRenewedEvent{" +
+                "policyNumber='" + policyNumber + '\'' +
+                ", cardNumber='" + cardNumber + '\'' +
+                ", premium=" + premium +
+                '}';
     }
 }

@@ -3,7 +3,7 @@ package com.thoughtworks.workshop.ddd.domain.policy.command;
 public class RenewCommand {
     private String policyNumber;
     private String cardNumber;
-    private double premium;
+    private Double price;
 
     public String getPolicyNumber() {
         return policyNumber;
@@ -21,7 +21,11 @@ public class RenewCommand {
         this.cardNumber = cardNumber;
     }
 
-    public double getPremium() {
-       return this.premium;
+    public double getPrice() {
+        return this.price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
     }
 }
