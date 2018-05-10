@@ -1,15 +1,16 @@
 package com.thoughtworks.workshop.ddd.domain.payment;
 
-import com.thoughtworks.workshop.ddd.domain.policy.model.PolicyRenewedEvent;
-import org.springframework.stereotype.Service;
-
 import static java.lang.String.format;
+
+import org.springframework.stereotype.Service;
 
 @Service
 public class PaymentApplicationService {
 
-    public void cutPayment(PolicyRenewedEvent policyRenewedEvent) {
-        System.out.println(format("%s %s %s", policyRenewedEvent.getCardNumber(),
-                policyRenewedEvent.getPolicyNumber(), policyRenewedEvent.getPremium()));
+    public void cutPayment(String policyNumber, String cardNumber, Double premium) {
+        System.out.println("============Received Policy Renewed Event================");
+        System.out.println("Policy Number      Card Number        Premium==============");
+        System.out.println(format("%s            %s             %s", policyNumber, cardNumber, premium));
+        System.out.println("=========================================================");
     }
 }
